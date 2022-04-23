@@ -1,0 +1,22 @@
+
+button{
+    margin-right: 10px;
+    margin-left: 10px;
+    align-items: center;
+}
+img{
+    margin-left: 140px;
+}
+#nav1
+{  
+    background-color:rgba(0, 0, 0,0.8); /*whichever you want*/     
+}
+
+.navbar-brand {
+    text-align: center;
+}
+
+.nav-link{
+    padding-left: 10px;
+    color: white;
+}

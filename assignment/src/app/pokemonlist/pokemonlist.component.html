@@ -1,0 +1,45 @@
+<input type="text" name="name" class="btn btn-success" placeholder="Search....." [(ngModel)]="name" (ngModelChange)="SearchPokemon($event)">
+<div class="pokemon-grid">
+    <div class="box"  *ngFor="let pokemon of pokemons" (click)="detailsClick(pokemon)" style="width:auto;">
+       
+        <img [src]="pokemon.sprites.front_default" alt="Pokemon">
+        <h3>{{pokemon.name}}</h3>
+      
+        
+    </div>
+
+</div>
+
+
+<div *ngIf = "detailedpokemon"
+class="modal"
+tabindex="-1"
+role="dialog"
+[ngStyle]="{'display':displayStyle}">
+<div class="modal-dialog" role="document">
+	<div class="modal-content">
+	
+	<div class="modal-body">
+          <img [src]="detailedpokemon.sprites.front_default" alt="Pokemon">
+		<p><b>Name :</b>{{detailedpokemon.name}}</p>
+        <p><b>Abilities : </b>{{detailedpokemon.abilities[0]?.ability?.name }}</p>
+        <p><b>Form : </b>{{detailedpokemon.forms[0]?.name }}</p> 
+         <p> <b>Height :</b>{{detailedpokemon.height}}</p>
+        <p><b>Moves : </b>{{detailedpokemon.moves[0]?.move?.name }}</p>
+        <p><b>Species : </b>{{detailedpokemon.species[0]?.name }}</p>
+        <p><b>Types : </b>{{detailedpokemon.types[0]?.type?.name }}</p>
+        <p><b>Weight : </b>{{detailedpokemon.weight }}</p>
+        <p><b>Stats : </b>{{detailedpokemon.stats[0]?.stat?.name }}</p>
+         
+        
+
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-danger"
+				(click)="closePopup()">
+		Close
+		</button>
+	</div>
+	</div>
+</div>
+</div>
